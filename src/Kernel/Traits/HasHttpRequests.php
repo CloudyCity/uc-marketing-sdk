@@ -192,7 +192,7 @@ trait HasHttpRequests
     /**
      * Get guzzle handler.
      *
-     * @return callable
+     * @return null|callable
      */
     protected function getGuzzleHandler()
     {

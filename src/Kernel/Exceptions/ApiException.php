@@ -38,4 +38,40 @@ class ApiException extends Exception
             $response->getBody()->rewind();
         }
     }
+
+    /**
+     * @return array
+     */
+    public function getApiFailures()
+    {
+        if (isset($this->formattedResponse['header']['failures'])) {
+            return $this->formattedResponse['header']['failures'];
+        } else {
+            return [];
+        }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getApiMessage()
+    {
+        if (isset($this->formattedResponse['header']['failures'][0]['message'])) {
+            return $this->formattedResponse['header']['failures'][0]['message'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getApiCode()
+    {
+        if (isset($this->formattedResponse['header']['failures'][0]['code'])) {
+            return $this->formattedResponse['header']['failures'][0]['code'];
+        } else {
+            return null;
+        }
+    }
 }
