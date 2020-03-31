@@ -10,16 +10,19 @@ class Client extends BaseClient
      * 创建推广创意.
      *
      * @param $adGroupId
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getTemplates(array $adGroupId)
     {
         $params = [
-            'adgroupId' => $adGroupId
+            'adgroupId' => $adGroupId,
         ];
+
         return $this->httpPostJson('creative/getCreativeTemplate', $params);
     }
 
@@ -27,10 +30,12 @@ class Client extends BaseClient
      * 创建推广创意.
      *
      * @param $params
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function add(array $params)
     {
@@ -41,10 +46,12 @@ class Client extends BaseClient
      * 更新推广创意.
      *
      * @param $params
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function update(array $params)
     {
@@ -56,17 +63,20 @@ class Client extends BaseClient
      *
      * @param $creativeIds
      * @param bool $paused
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function updatePaused(array $creativeIds, $paused)
     {
         $params = [
             'adGroupIds' => $creativeIds,
-            'paused' => $paused
+            'paused'     => $paused,
         ];
+
         return $this->httpPostJson('creative/paused/update', $params);
     }
 
@@ -74,16 +84,19 @@ class Client extends BaseClient
      * 删除推广创意.
      *
      * @param $creativeIds
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function delete(array $creativeIds)
     {
         $params = [
             'creativeIds' => $creativeIds,
         ];
+
         return $this->httpPostJson('creative/delete', $params);
     }
 
@@ -91,16 +104,19 @@ class Client extends BaseClient
      * 根据推广计划id获取推广创意.
      *
      * @param $campaignIds
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getByCampaignIds(array $campaignIds)
     {
         $params = [
             'campaignIds' => $campaignIds,
         ];
+
         return $this->httpPostJson('creative/getCreativeByCampaignId', $params);
     }
 
@@ -108,16 +124,19 @@ class Client extends BaseClient
      * 根据推广计划id获取推广创意id.
      *
      * @param $campaignIds
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getIdsByCampaignIds(array $campaignIds)
     {
         $params = [
             'campaignIds' => $campaignIds,
         ];
+
         return $this->httpPostJson('creative/getCreativeIdByCampaignId', $params);
     }
 
@@ -125,16 +144,19 @@ class Client extends BaseClient
      * 根据推广创意id获取推广创意.
      *
      * @param $creativeIds
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getByIds(array $creativeIds)
     {
         $params = [
             'creativeIds' => $creativeIds,
         ];
+
         return $this->httpPostJson('creative/getCreativeByCreativeId', $params);
     }
 }

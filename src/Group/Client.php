@@ -10,10 +10,12 @@ class Client extends BaseClient
      * 创建推广组.
      *
      * @param array $params
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function add(array $params)
     {
@@ -24,10 +26,12 @@ class Client extends BaseClient
      * 更新推广组.
      *
      * @param array $params
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function update(array $params)
     {
@@ -38,18 +42,21 @@ class Client extends BaseClient
      * 更新推广组状态.
      *
      * @param array $adGroupIds
-     * @param bool $paused
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     * @param bool  $paused
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function updatePaused(array $adGroupIds, $paused)
     {
         $params = [
             'adGroupIds' => $adGroupIds,
-            'paused' => $paused
+            'paused'     => $paused,
         ];
+
         return $this->httpPostJson('adgroup/paused/update', $params);
     }
 
@@ -57,16 +64,19 @@ class Client extends BaseClient
      * 删除推广组.
      *
      * @param array $adGroupIds
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function delete(array $adGroupIds)
     {
         $params = [
             'adGroupIds' => $adGroupIds,
         ];
+
         return $this->httpPostJson('adgroup/delete', $params);
     }
 
@@ -74,26 +84,30 @@ class Client extends BaseClient
      * 根据推广组id获取推广组.
      *
      * @param array $adGroupIds
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getByIds(array $adGroupIds)
     {
         $params = [
             'adGroupIds' => $adGroupIds,
         ];
+
         return $this->httpPostJson('adgroup/getAdGroupByAdGroupId', $params);
     }
 
     /**
      * 获取账户下所有推广组.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function get()
     {
@@ -103,10 +117,11 @@ class Client extends BaseClient
     /**
      * 获取账户下所有推广组id.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getIds()
     {

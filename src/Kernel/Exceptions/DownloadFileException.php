@@ -6,7 +6,6 @@ use Psr\Http\Message\ResponseInterface;
 
 class DownloadFileException extends ApiException
 {
-
     /**
      * @var \Psr\Http\Message\ResponseInterface|null
      */
@@ -22,12 +21,12 @@ class DownloadFileException extends ApiException
      *
      * @param $message
      * @param \Psr\Http\Message\ResponseInterface|null $response
-     * @param mixed $formattedResponse
-     * @param int|null $code
+     * @param mixed                                    $formattedResponse
+     * @param int|null                                 $code
      */
     public function __construct($message, ResponseInterface $response = null, $formattedResponse = null, $code = null)
     {
-        $message = $message ? :'Empty report, make sure taskId is right and ready.';
+        $message = $message ?: 'Empty report, make sure taskId is right and ready.';
 
         parent::__construct($message, $response, $formattedResponse, $code);
     }

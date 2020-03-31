@@ -6,6 +6,7 @@ namespace CloudyCity\UCMarketingSDK\Kernel\Support;
  * Cast a csv string to an array.
  *
  * @param $str
+ *
  * @return array
  */
 function csvStringToArray($str)
@@ -16,5 +17,6 @@ function csvStringToArray($str)
         $row = array_combine($rows[0], $row);
     });
     array_shift($rows);
+
     return $rows;
 }

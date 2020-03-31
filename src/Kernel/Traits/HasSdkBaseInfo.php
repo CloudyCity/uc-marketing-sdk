@@ -75,7 +75,7 @@ trait HasSdkBaseInfo
         return [
             'username' => $this->getUsername(),
             'password' => $this->getPassword(),
-            'token' => $this->getToken(),
+            'token'    => $this->getToken(),
         ];
     }
 }

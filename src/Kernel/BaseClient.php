@@ -44,14 +44,14 @@ class BaseClient
      * Sending json.
      *
      * @param string $url
-     * @param array $data
-     * @param array $query
+     * @param array  $data
+     * @param array  $query
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Doctrine\Common\Collections\ArrayCollection|array|object|string
      * @throws Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
-     *
      * @throws ApiException
+     *
+     * @return \Psr\Http\Message\ResponseInterface|\Doctrine\Common\Collections\ArrayCollection|array|object|string
      */
     public function httpPostJson($url, array $data = [], array $query = [])
     {
@@ -65,10 +65,12 @@ class BaseClient
      *
      * @param $url
      * @param array $files
-     * @return array|ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws ApiException
      * @throws Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function httpPostFile($url, array $files)
     {
@@ -80,12 +82,13 @@ class BaseClient
      *
      * @param string $url
      * @param string $method
-     * @param array $options
+     * @param array  $options
      *
-     * @return \Psr\Http\Message\ResponseInterface|\Doctrine\Common\Collections\ArrayCollection|array|object|string
      * @throws Exceptions\InvalidArgumentException
      * @throws Exceptions\ApiException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return \Psr\Http\Message\ResponseInterface|\Doctrine\Common\Collections\ArrayCollection|array|object|string
      */
     public function request($url, $method = 'POST', array $options = [])
     {
@@ -116,6 +119,7 @@ class BaseClient
      * Attache token to request.
      *
      * @param array $options
+     *
      * @return array
      */
     protected function appendToken(array $options)
@@ -130,7 +134,7 @@ class BaseClient
             } else {
                 $options['json'] = [
                     'header' => $authorization,
-                    'body' => $options['json']
+                    'body'   => $options['json'],
                 ];
             }
         }
@@ -140,6 +144,7 @@ class BaseClient
 
     /**
      * @param $url
+     *
      * @return bool
      */
     protected function isDownloadFile($url)

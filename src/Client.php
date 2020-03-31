@@ -18,12 +18,12 @@ use CloudyCity\UCMarketingSDK\Kernel\BaseInvoker;
 class Client extends BaseInvoker
 {
     protected $providers = [
-        'report' => \CloudyCity\UCMarketingSDK\Report\Client::class,
-        'account' => \CloudyCity\UCMarketingSDK\Account\Client::class,
-        'group' => \CloudyCity\UCMarketingSDK\Group\Client::class,
+        'report'   => \CloudyCity\UCMarketingSDK\Report\Client::class,
+        'account'  => \CloudyCity\UCMarketingSDK\Account\Client::class,
+        'group'    => \CloudyCity\UCMarketingSDK\Group\Client::class,
         'campaign' => \CloudyCity\UCMarketingSDK\Campaign\Client::class,
         'creative' => \CloudyCity\UCMarketingSDK\Creative\Client::class,
         'material' => \CloudyCity\UCMarketingSDK\Material\Client::class,
-        'order' => \CloudyCity\UCMarketingSDK\Order\Client::class,
+        'order'    => \CloudyCity\UCMarketingSDK\Order\Client::class,
     ];
 }
