@@ -100,7 +100,7 @@ class BaseClient
         $formatted = $this->castResponseToType($response, $this->getResponseType());
 
         if ($this->isDownloadFile($url)) {
-            if (!$formatted) {
+            if (!$response->getBody()->getContents()) {
                 throw new DownloadFileException('', $response, $formatted, 0);
             }
         } else {
