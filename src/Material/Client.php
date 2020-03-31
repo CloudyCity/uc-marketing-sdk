@@ -10,16 +10,19 @@ class Client extends BaseClient
      * 上传图片.
      *
      * @param array $imageUrls
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function uploadImages(array $imageUrls)
     {
         $params = [
-            'imageUrls' => $imageUrls
+            'imageUrls' => $imageUrls,
         ];
+
         return $this->httpPostJson('material/uploadImage', $params);
     }
 
@@ -27,10 +30,12 @@ class Client extends BaseClient
      * 获取图片.
      *
      * @param array $params
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getImages(array $params)
     {
@@ -43,10 +48,12 @@ class Client extends BaseClient
      * @see http://docs.guzzlephp.org/en/stable/quickstart.html#sending-form-files
      *
      * @param array $files
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function uploadVideos(array $files)
     {
@@ -56,10 +63,11 @@ class Client extends BaseClient
     /**
      * 获取审核通过的视频.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getVideos()
     {
@@ -69,10 +77,11 @@ class Client extends BaseClient
     /**
      * 获取省市列表.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getProvinces()
     {
@@ -82,10 +91,11 @@ class Client extends BaseClient
     /**
      * 获取区县列表.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getCounties()
     {
@@ -95,10 +105,11 @@ class Client extends BaseClient
     /**
      * 获取兴趣列表.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getInterests()
     {
@@ -109,24 +120,26 @@ class Client extends BaseClient
      * 获取关键词推荐、站点推荐、 APP推荐结果.
      *
      * @param array $params
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getRecommend(array $params)
     {
         return $this->httpPostJson('material/getRecommend', $params);
     }
 
-
     /**
      * 获取应用分类列表.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getAppCategories()
     {
@@ -137,16 +150,19 @@ class Client extends BaseClient
      * 获取转化类型列表.
      *
      * @param $objectiveType
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getConvertTypes($objectiveType)
     {
         $params = [
-            'objectiveType' => $objectiveType
+            'objectiveType' => $objectiveType,
         ];
+
         return $this->httpPostJson('material/getConvertTypes', $params);
     }
 
@@ -154,26 +170,30 @@ class Client extends BaseClient
      * 根据转化类型获取联调通过的转化列表.
      *
      * @param $convertMonitorType
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getAdConvert($convertMonitorType)
     {
         $params = [
-            'convertMonitorType' => $convertMonitorType
+            'convertMonitorType' => $convertMonitorType,
         ];
+
         return $this->httpPostJson('material/getAdConvert', $params);
     }
 
     /**
      * 获取词包列表.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getWordPackages()
     {
@@ -183,10 +203,11 @@ class Client extends BaseClient
     /**
      * 获取android-app列表.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getAndroidApps()
     {
@@ -197,26 +218,30 @@ class Client extends BaseClient
      * 获取ios app.
      *
      * @param string $appId
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
+     *
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getIosAppByAppId($appId)
     {
         $params = [
-            'appId' => $appId
+            'appId' => $appId,
         ];
+
         return $this->httpPostJson('material/getIosAppByAppId', $params);
     }
 
     /**
      * 获取行业列表.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getIndustries()
     {
@@ -226,10 +251,11 @@ class Client extends BaseClient
     /**
      * 获取定向包列表.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getTargetingPackages()
     {
@@ -239,10 +265,11 @@ class Client extends BaseClient
     /**
      * 获取创意分类列表.
      *
-     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\ApiException
      * @throws \CloudyCity\UCMarketingSDK\Kernel\Exceptions\InvalidArgumentException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return array|\Doctrine\Common\Collections\ArrayCollection|object|\Psr\Http\Message\ResponseInterface|string
      */
     public function getCreativeIndustries()
     {

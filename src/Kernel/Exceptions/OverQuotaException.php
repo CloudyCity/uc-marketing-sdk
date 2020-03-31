@@ -6,7 +6,6 @@ use Psr\Http\Message\ResponseInterface;
 
 class OverQuotaException extends ApiException
 {
-
     /**
      * @var \Psr\Http\Message\ResponseInterface|null
      */
@@ -22,8 +21,8 @@ class OverQuotaException extends ApiException
      *
      * @param $url
      * @param \Psr\Http\Message\ResponseInterface|null $response
-     * @param mixed $formattedResponse
-     * @param int|null $code
+     * @param mixed                                    $formattedResponse
+     * @param int|null                                 $code
      */
     public function __construct($url, ResponseInterface $response = null, $formattedResponse = null, $code = null)
     {

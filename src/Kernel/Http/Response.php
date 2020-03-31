@@ -2,10 +2,10 @@
 
 namespace CloudyCity\UCMarketingSDK\Kernel\Http;
 
+use function CloudyCity\UCMarketingSDK\Kernel\Support\csvStringToArray;
 use Doctrine\Common\Collections\ArrayCollection;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use Psr\Http\Message\ResponseInterface;
-use function CloudyCity\UCMarketingSDK\Kernel\Support\csvStringToArray;
 
 /**
  * Class Response from easywechat.
@@ -62,13 +62,14 @@ class Response extends GuzzleResponse
 
         if (!empty($headers['Content-Type']) && strpos($headers['Content-Type'][0], 'octet-stream')) {
             $content = iconv('gb2312', 'utf-8', $content);
+
             return csvStringToArray($content);
         }
 
         $array = json_decode($content, true, 512, JSON_BIGINT_AS_STRING);
 
         if (JSON_ERROR_NONE === json_last_error()) {
-            return (array)$array;
+            return (array) $array;
         }
 
         return [];
